@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanban Task Board</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Project board</p>
+        <h1>Kanban Task Board</h1>
+      </div>
+      <form class="task-form" id="taskForm">
+        <input
+          type="text"
+          id="taskTitle"
+          name="taskTitle"
+          placeholder="Add a new task"
+          autocomplete="off"
+          required
+        >
+
+        <select id="taskPriority" name="taskPriority" aria-label="Task priority">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+
+        <input type="date" id="taskDueDate" name="taskDueDate" aria-label="Due date">
+
+        <button type="submit">Add Task</button>
+      </form>
+    </header>
+
+    <section class="board" aria-label="Kanban board">
+      <article class="column" data-status="todo">
+        <div class="column-header">
+          <h2>To Do</h2>
+          <span class="task-count" id="todoCount">0</span>
+        </div>
+        <ul class="task-list" id="todoList"></ul>
+      </article>
+
+      <article class="column" data-status="in-progress">
+        <div class="column-header">
+          <h2>In Progress</h2>
+          <span class="task-count" id="inProgressCount">0</span>
+        </div>
+        <ul class="task-list" id="inProgressList"></ul>
+      </article>
+
+      <article class="column" data-status="done">
+        <div class="column-header">
+          <h2>Done</h2>
+          <span class="task-count" id="doneCount">0</span>
+        </div>
+        <ul class="task-list" id="doneList"></ul>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
